@@ -10,277 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aladin&family=Aleo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,400;1,100;1,700&display=swap&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-    <!-- CSS Styling
-    ! Move off of HTML and into CSS
-    -->
-    <style>
-      ::-webkit-scrollbar {
-        display: none;
-      }
-      * {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-      body {
-        background-color: #868065;
-      }
-      img {
-        width: 50%;
-        height: 50%;
-        object-fit: cover;
-        transform: translateY(150px);
-        margin-left: 400px;
-        padding: none;
-        border-radius: 100px;
-      }
-      .container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vh;
-        height: 100vw;
-        transform: rotate(-90deg) translateY(-775px);
-        transform-origin: top right;
-        overflow-x: hidden;
-        overflow-y: auto;
-        counter-reset: offset;
-      }
-      .container div {
-        counter-increment: offset;
-        position: relative;
-        width: 100%;
-        height: 45%;
-        transform: rotate(90deg);
-        display: flex;
-      }
-      p {
-        padding: 10px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-family: 'Roboto Mono', monospace;
-  padding: 120px 40px 120px 40px;
-  font-size: 20px;
-  color: rgb(199, 101, 21);
-      }
-
-      .nav {
-      width: 10%;
-      position: fixed;
-      height: 100%;
-      overflow: none;
-      background-color: #5C4B38;
-      display: block;
-      z-index: 10;
-      padding: 15px;
-      margin: -10px;
-      }
-
-.nav a {
-  margin-left: 10px;
-  display: block;
-  font-family: 'Roboto Mono', monospace;
-  font-size: medium;
-  color: #FAE0C6;
-  text-decoration: none;
-  background-color: #5C4B38;
-  justify-content: left;
-  border-radius: 10px;
-  line-height: 200%;
-  font-weight: 100;
-}
-
-.nav a:hover {
-  font-weight: 400;
-  transform: translateX(25px);
-  transition: transform 100ms;
-}
-
-.nav .mIcon {
-  width: 70%;
-  height: 70%;
-transform: translate( -375px, 0px);
-  z-index: 20;
-
-}
-
-nav .bioName {
-  margin-left: 10px;
-  display: block;
-  font-family: 'Roboto Mono', monospace;
-  font-size: small;
-  color: #FAE0C6;
-  text-decoration: none;
-  justify-content: left;
-  font-weight: 100;
- text-align: center;
- transform: translateY(650px);
-line-height: 1%;
-
-}
-
-nav .email {
-  margin-left: 10px;
-  display: block;
-  font-family: 'Roboto Mono', monospace;
-  font-size: small;
-  color: #FAE0C6;
-  text-decoration: none;
-  justify-content: left;
-  font-weight: 100;
- text-align: center;
- transform: translateY(650px);
-}
-
-
-
-
-
-      .container div h1 {
-        padding: 0px 0px 0px 200px;
-        margin: 0px 0px 0px 200px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-30%, -75%);
-        font-size: 140px;
-        flex-wrap: wrap;
-        color: #FAE0C6;
-        font-family: 'DM Serif Display', serif;
-        padding: 10px;
-        width: 50vw;
-        line-height: 110px;
-      }
-
-      .container div h3 {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 10vw;
-        font-family: 'DM Serif Display', serif;
-        font-size: 50px;
-        color: #FAE0C6;
-        margin: 0px -400px 0px -400px; /*Margin order goes Top, Right, Bottom, Left*/
-      }
-
-      body .artGallery  {
-        transform: rotate(180deg);
-        transform: translateY(100px);
-        margin-right: 300px;
-      }
-
-      body .artGallery .artGalleryHeading {
-        margin: 0px 600px 0px 600px;
-      }
-
-      .pBordered {
-        font-family: 'Roboto Mono', monospace;
-        background-color: #FAE0C6;
-        padding: 120px 40px 120px 40px;
-        font-size: 20px;
-        color: rgb(199, 101, 21);
-      }
-
-      .container div #webDevh3 {
-        transform: translate( 1300px, -200px );
-        width: 30vw;
-
-      }
-
-      /* I didn't end up very happy with my cards. The spaces between each section are far too wide, but I couldn't seem to fix this with margin, width or height. Additionally, while designing a :hover initially worked on the cards, eventually it stopped, even with !important. */
-
-      #development {
-        transform: rotate(0deg);
-        transform: translate( 0px, 1200px);
-     }
-
-     #development .card {
-      /* transform: translate( 1200px, -50px ); */
-      float: left;
-      margin-top: 30px;
-      width: 33%;
-      padding: 0 5px;
-      line-height: normal;
-      background-color: rgb(255, 149, 62);
-      color: #FAE0C6;
-      height: 50%;
-      width: 130%;
-      text-align: center;
-      border-radius: 10px;
-      font-weight: 300;
-      font-size: 100px;
-      overflow-x: visible;
-     }
-
-     #development .card:hover {
-      background-color: rgb(205, 92, 0);
-      font-weight: 800;
-      transition: .3s;
-      height: 60%;
-      width: 150%;
-
-     }
-
-     
-      /* .card {   
-        margin: 1 rem;
-        transform: translate( 800px, -300px );
-        font-size: 50px;
-        font-weight: 100;
-        position: absolute;
-        background-color: #FAE0C6;
-        width: 30%;
-        height: 30%;
-        text-align: center;
-} */
-
-
-
-
-
-
-/* .card:hover {
-        font-weight: 700 !important;
-        width: 40%;
-        z-index: 10;
-      } */
-
-
-      #about {
-        /* transform: translateY(3000px); */
-        transform: rotate(90deg);
-        display: block;
-        padding: 1500px 0px 0px 200px;
-      }
-      #about h1 {
-        margin-left: -400px;
-        margin-top: -200px;
-        transform: rotate(-90deg);
-
-      }
-      #about p {
-        background-color: #FAE0C6;
-        width: 70%;
-        margin: 100px 0px 0px 600px;
-      }
-
-
-
-
-
-      
-
-
-
-
-
-    </style>
+<link rel="stylesheet" href="./styles.css">
   </head>
   <body>
 
-<!-- ! Navigation Bar -->
+<!-- ? Navigation Bar -->
 <!-- The styling of the website is based off my portfolio. All assets, such as the "M" icon, were designed by me. Initially, the "M" didn't work correctly until I wrapped it in a div. -->
 
     <nav class="nav">
@@ -300,7 +34,7 @@ nav .email {
         <h1>A designer <br> of 7 years <br> (and counting)</h1>
       </div>
       <div>
-        <img src="https://cdn.discordapp.com/attachments/1148702616700846153/1148702731809329283/Screenshot_945.png?ex=6517cf89&is=65167e09&hm=aed415ac00454351c7e5e4a355fc1ce147ba6788978658deb6cc9d9037bacc3c&" alt="Me">
+        <img class="" src="https://cdn.discordapp.com/attachments/1148702616700846153/1148702731809329283/Screenshot_945.png?ex=6517cf89&is=65167e09&hm=aed415ac00454351c7e5e4a355fc1ce147ba6788978658deb6cc9d9037bacc3c&" alt="Me">
       </div>
       <div>
         <h3>I always knew I was an artist, but I never expected to be a developer.</h3>
@@ -311,7 +45,7 @@ nav .email {
         </p>
       </div>
 
-<!-- * Art Gallery
+<!--  ? Art Gallery
   Embedded Instagram posts from my art account, wrapped in a div, then rotated and translatedY to correct structure. The upcoming comments denote a one/two word name id for myself to remember order and ensure no redundancies. -->
       <!-- \\#region -->
       <div id="gallery">
@@ -333,13 +67,13 @@ nav .email {
       <!-- \\#endregion -->
 
 
-<!-- * Development 
+<!-- ? Development 
   Once again, uncertain what spacing happened here, so had to readjust by giving it a class -->
     <div>
       <h3 id="webDevh3">I didn't know I liked coding until I was fired from my first web developer job. That's when it all came together.</h3>
     </div>
 
-<!-- ! GitHub future link spaces -->
+<!-- ? GitHub future link spaces -->
 <!-- <div  id="development">
 <div class="card">
 <ul>
@@ -362,19 +96,13 @@ nav .email {
 </div>
 
 </div>
- 
-  
-
-
-<!-- Contact and another picture, page 4
-want this heading and paragraph to be vertically on same page
+<!-- ? About 
+This section was tricky to style and didn't come out the way I wanted it to.
 -->
 
 <div id="about">
 
-  <h1>Milo 
-    <br>
-    Koleske</h1>
+
   <p>Over the past years I have developed my skills in communication, advertising, social media marketing, graphic design, and web development. I've been an artist since I was 9 years old and thought that with only a little practice, I could be a better author than JK Rowling, and <strong>boy</strong> has time vindicated me.
   <br>
   <br>
@@ -385,25 +113,7 @@ want this heading and paragraph to be vertically on same page
 </p>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-<!-- ! Art Gallery -->
+</div>
 
   </body>
 </html>

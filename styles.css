@@ -1,49 +1,229 @@
+/* Some notes on styling:
+        There's a few styling irregularities in regards to margins, padding, and translate X,Y to account for horizontal spacing. When I do this project again, I'd like to do the following:
+            ! correct / clean up margins, paddings, translate x,y, as this will also simplify the number of classes and ids I had to make
+            ! a more 'in style' art gallery section, and include web dev projects
+            ! design more around the body, or use the * more so less properties need to be used on every page
+            ! add a contact form (js enabled)
+            ! implement scrolling with javascript event
+        Other than that, I'm pretty happy about the styling of the site.
+*/
+
+/* General .container is what holds everything. The rotation you'll see below rotates this container to where everything is horizontal. Then, the .container rotation returns all internal divs to the correct rotation of 0. */
+/*  ? General styling container */
 ::-webkit-scrollbar {
     display: none;
 }
-
   * {
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+body {
     background-color: #868065;
 }
-
 .container {
     position: absolute;
     top: 0;
     left: 0;
-    width: 600px;
+    width: 100vh;
     height: 100vw;
-    transform: rotate(-90deg) translateY(-600px);
+    transform: rotate(-90deg) translateY(-775px);
     transform-origin: top right;
     overflow-x: hidden;
     overflow-y: auto;
     counter-reset: offset;
 }
-
 .container div {
     counter-increment: offset;
     position: relative;
     width: 100%;
-    height: 700px;
+    height: 45%;
     transform: rotate(90deg);
-    margin: 10px 0;
+    display: flex;
 }
 
-p {
-    padding: 10px;
-    background: white;
-    position: absolute;
-    top: 25%;
-    left: 50%;
-}
 
+/* ? Navigation */
 .nav {
     width: 10%;
     position: fixed;
     height: 100%;
     overflow: none;
     background-color: #5C4B38;
-    transform: translateX(-600px);
     display: block;
+    z-index: 10;
+    transform: translateX(-10px) translateY(-10px);
+    padding: 15px, 15px, 15px, 15px;
+    margin: -10px, -10px, -10px, -10px;  /* To make all margins and padding more ~satisfying~ I decided to always list the 4 values (T,R,B,L)*/
+}
+
+/* Somewhere in nav, I think in a, I missed something that would allow padding around the links */
+.nav a {
+    margin: 0px, 0px, 0px, 0px;
+    padding: 10px, 0px, 10px, 0px;
+    display: block;
+    font-family: 'Roboto Mono', monospace;
+    font-size: large;
+    color: #FAE0C6;
+    text-decoration: none;
+    background-color: #5C4B38;
+    justify-content: left;
+    border-radius: 10px;
+    line-height: 200%;
+    font-weight: 100;
+}
+
+.nav a:hover {
+    font-weight: 400;
+    transform: translateX(25px);
+    transition: transform 100ms;
+}
+
+.nav .mIcon {
+width: 75%;
+    height: 75%;
+    object-fit: cover;
+    transform: translateY(120px)translateX(20px);
+    margin: 0px, 0px, 0px, 0px;
+    padding: 0px, 0px, 0px, 0px;
+    border-radius: 100px;
+    z-index: 30;
+}
+
+nav .bioName {
+    margin: 0px, 0px, 0px, 10px;
+    display: block;
+    font-family: 'Roboto Mono', monospace;
+    font-size: small;
+    color: #FAE0C6;
+    text-decoration: none;
+    justify-content: left;
+    font-weight: 100;
+    text-align: center;
+    transform: translateY(650px);
+    line-height: 1%;
+}
+
+nav .email {
+    margin: 0px, 0px, 0px, 10px;
+    display: block;
+    font-family: 'Roboto Mono', monospace;
+    font-size: small;
+    color: #FAE0C6;
+    text-decoration: none;
+    justify-content: left;
+    font-weight: 100;
+    text-align: center;
+    transform: translateY(650px);
+}
+
+
+/*  ? Body styling */
+
+img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 300px; 
+}
+p {
+    padding: 10px, 10px, 10px, 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgb(199, 101, 21);
+}
+.container div h1 {
+    padding:  0px, 0px, 0px, 200px;
+    margin: 0px, 0px, 0px, 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -75%);
+    font-size: 140px;
+    flex-wrap: wrap;
+    color: #FAE0C6;
+    font-family: 'DM Serif Display', serif;
+    width: 50vw;
+    line-height: 110px;
+}
+.container div h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-150%, -50%);
+    width: 10vw;
+    font-family: 'DM Serif Display', serif;
+    font-size: 50px;
+    color: #FAE0C6;
+    margin: 0px -400px 0px -400px;
+}
+body .artGallery  {
+    transform: rotate(180deg);
+    transform: translateY(100px);
+    margin: 0px, 300px, 0px, 0px;
+}
+body .artGallery .artGalleryHeading {
+    margin: 0px 600px 0px 600px;
+}
+.pBordered {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #FAE0C6;
+    padding: 120px 40px 120px 40px;
+    font-size: 20px;
+    color: rgb(199, 101, 21);
+}
+.container div #webDevh3 {
+    transform: translate( 1300px, -200px );
+    width: 30vw;
+}
+
+/* These cards were one of the more time consuming pieces. I wish I had more finesse over the top/bottom margins here, but as previously stated, I had some trouble with those. Sometimes, unsure if it is human error, I would lose my hover effects. */
+
+#development {
+    transform: rotate(0deg);
+    transform: translate( 100px, 1300px);
+}
+
+#development .card {
+  /* transform: translate( 1200px, -50px ); */
+    float: left;
+    margin: 30px, 0px, 0px, 0px;
+    width: 33%;
+    padding: 0px, 5px, 0px, 5px;
+    line-height: normal;
+    background-color: rgb(255, 149, 62);
+    color: #FAE0C6;
+    height: 50%;
+    width: 130%;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 300;
+    font-size: 100px;
+    overflow-x: visible;
+}
+
+#development .card:hover {
+    background-color: rgb(205, 92, 0);
+    font-weight: 800;
+    transition: .3s;
+    height: 60%;
+    width: 150%;
+}
+
+/* I did something in the about section incorrectly, because padding and margin would break if I used all 4 values, but would show if I had 1. */
+
+#about {
+    transform: rotate(90deg);
+    display: block;
+    padding: 1000px 0px 0px 200px;
+}
+
+#about p {
+    background-color: #FAE0C6;
+    width: 70%;
+    margin: 100px 0px 0px 600px;
+    padding: 200px; 
 }
